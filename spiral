@@ -1,0 +1,46 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int[][] a = {{55,23,45,56,87},
+                     {68,58,25,35,45},
+                     {34,34,46,56,56},
+                     {78,65,46,94,56},
+                     {55,45,68,57,56}};
+
+        int top = 0;
+        int bottom = a.length - 1;
+        int left = 0;
+        int right = a[0].length - 1;
+
+        for(int i = left; i <= right; i++)
+        {
+            System.out.print(a[top][i] + " ");
+        }
+        top++;
+
+        for(int i = top; i <= bottom; i++)
+        {
+            System.out.print(a[i][right] + " ");
+        }
+        right--;
+
+        for(int i = right; i >= left; i--)
+        {
+            System.out.print(a[bottom][i] + " ");
+        }
+        bottom--;
+
+        for(int i = bottom; i >= top; i--)
+        {
+            System.out.print(a[i][left] + " ");
+        }
+        left++;
+
+        for(int i = left; i <= right; i++)
+        {
+            System.out.print(a[top][i] + " ");
+        }
+        top++;
+    }
+}
